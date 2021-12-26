@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+      body {
+        background-color: #1db9c3;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+      }
+      button,
+      input {
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        width: 50%;
+        height: 20rem;
+        margin: 0 auto;
+        background-color: #c32bad;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .lower,
+      .add {
+        background-color: #f56fad;
+        padding: 1rem 2rem;
+        border: none;
+        color: #fff;
+        margin: 0 auto;
+      }
+      .lower:hover,
+      .add:hover {
+        background-color: rgba(245, 111, 173, 0.7);
+        color: #000;
+        cursor: pointer;
+      }
+      h1,
+      h2 {
+        text-transform: capitalize;
+      }
+      .buttons {
+        display: flex;
+        column-gap: 2rem;
+      }
+      .count {
+        font-size: 6rem;
+        font-weight: 700;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="h1">Counter</h1>
+      <h2 class="count">0</h2>
+      <div class="buttons">
+        <button type="button" class="lower">Lower Count</button>
+        <button type="button" class="add">Add Count</button>
+      </div>
+    </div>
+    <script>
+      let lower = document.querySelector(".lower");
+      let add = document.querySelector(".add");
+      let countInner = document.querySelector(".count");
+      let count = document.querySelector(".count").innerText;
+      let countNum = Number(count);
+      add.addEventListener("click", () => {
+        countNum++;
+        countInner.innerText = countNum;
+      });
+      lower.addEventListener("click", () => {
+        countNum--;
+        countInner.innerText = countNum;
+      });
+    </script>
+  </body>
+</html>

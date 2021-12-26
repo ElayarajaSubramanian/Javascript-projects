@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: yellow;
+        padding: 1rem;
+      }
+    </style>
+    <script>
+      let changeClr = () => {
+        const colorArr = ["pink", "red", "green", "blue"];
+        const colorIndex = parseInt(Math.random() * colorArr.length);
+        document.body.style.backgroundColor = colorArr[colorIndex];
+      };
+    </script>
+  </head>
+  <body>
+    <button type="button" class="button" onclick="changeClr()">Click me</button>
+  </body>
+</html>

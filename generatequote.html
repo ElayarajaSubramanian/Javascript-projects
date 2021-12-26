@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+      body {
+        background-color: #f4eea9;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+      }
+      button,
+      input {
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        width: 50%;
+        height: 20rem;
+        margin: 0 auto;
+        background-color: #f0bb62;
+        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .generate {
+        background-color: #519259;
+        padding: 1rem 2rem;
+        border: none;
+        color: #fff;
+        margin: 0 auto;
+      }
+      .generate:hover {
+        background-color: rgba(81, 146, 89, 0.5);
+        color: #000;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      let changeQuote = () => {
+        const quotes = [
+          {
+            quote:
+              "Life is like a landscape. You live in the midst of it but can describe it only from the vantage point of distance.",
+            author: "Charles Lindbergh"
+          },
+          {
+            quote:
+              "The price of anything is the amount of life you exchange for it.",
+            author: "David Thoreau"
+          },
+          {
+            quote:
+              "Life is too short and sweet to be spent by cribbing and complaining about things. Here are some random quotes about the most wonderful gift that we've got",
+            author: "Life"
+          }
+        ];
+        const quotesNo = parseInt(Math.random() * quotes.length);
+        const quote = document.querySelector(".quote");
+        const author = document.querySelector(".author");
+        quote.innerText = `${quotes[quotesNo].quote}`;
+        author.innerText = `${quotes[quotesNo].author}`;
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <button class="generate" onclick="changeQuote()">Generate Quote</button>
+      <blockquote class="quote"></blockquote>
+      <p class="author"></p>
+    </div>
+  </body>
+</html>
